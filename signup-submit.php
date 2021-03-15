@@ -18,23 +18,22 @@
         </div>
 
 		<?php
-			//$myfile = fopen("singles.txt", "w") or die("Unable to open file!");
-			$myfile = "singles.txt";
+			// Create file and store info into singles.txt
+			$singlesFile = "singles.txt";
 			$txt = $_POST["userName"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["gender"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["age"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["userPersonality"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["oslist"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["minAge"] . ",";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 			$txt = $_POST["maxAge"] . "\n";
-			file_put_contents($myfile, $txt, FILE_APPEND | LOCK_EX);
-			//fclose($myfile);
+			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
 		?>
 		<h1>Thank you!</h1>
 		<p>
