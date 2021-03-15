@@ -6,7 +6,6 @@
 	<head>
 		<title>NerdieLuv</title>
 		<link rel="stylesheet" href="https://codd.cs.gsu.edu/~lhenry23/Web/HW/Asg03/nerdieluv.css">
-        <link rel="stylesheet" href="common.css">
 		<meta charset="utf-8" />
 	</head>
 
@@ -19,45 +18,48 @@
         </div>
 
 		<div>
-            <h1>
-                Sign Up!
-            </h1>
             <form action="signup-submit.php" method="POST" id="signForm">
-                <label for="name">Name: </label>
-                    <input type="text" name="userName" id="name" maxlength="16"/>
-                </br>
-                
-                <label> Gender: </label>    
-                    <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label> 
-                </br>
-                
-                <label for="age"> Age: </label>
-                    <input type="text" name="age" id="age" size="6" maxlength="2"/> 
-                </br>
-                
-                <label for="personality"> Personality Type: </label>
-                    <input type="text" name="userPersonality" id="personality" size="6" maxlength="4"/> 
-                        (<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">Don't know your type?</a>)
-                </br>
-                
-                <label for="os">Favorite OS: </label>
-                    <select id="os" name="oslist" form="signForm">
-                        <option value="windows" selected>Windows</option>
-                        <option value="mac">Mac OS X</option>
-                        <option value="linux">Linux</option>
-                    </select>
-                </br>
-                
-                <label for="seekingAge"> Seeking age: </label> 
-                    <input type="text" name="minAge" size="6" maxlength="2" placeholder="Min"/> to <input type="text" name="maxAge"  size="6" maxlength="2" placeholder="Max"/>
-                </br>
+                <fieldset>
+                <legend>
+                    Sign Up!
+                </legend>
+                    <label for="name">Name: </label>
+                        <input type="text" name="userName" id="name" maxlength="16"/>
+                    </br>
+                    
+                    <label> Gender: </label>    
+                        <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label> 
+                    </br>
+                    
+                    <label for="age"> Age: </label>
+                        <input type="text" name="age" id="age" size="6" maxlength="2"/> 
+                    </br>
+                    
+                    <label for="personality"> Personality Type: </label>
+                        <input type="text" name="userPersonality" id="personality" size="6" maxlength="4"/> 
+                            (<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">Don't know your type?</a>)
+                    </br>
+                    
+                    <label for="os">Favorite OS: </label>
+                        <select id="os" name="oslist" form="signForm">
+                            <option value="windows" selected>Windows</option>
+                            <option value="mac">Mac OS X</option>
+                            <option value="linux">Linux</option>
+                        </select>
+                    </br>
+                    
+                    <label for="seekingAge"> Seeking age: </label> 
+                        <input type="text" name="minAge" size="6" maxlength="2" placeholder="Min"/> to <input type="text" name="maxAge"  size="6" maxlength="2" placeholder="Max"/>
+                    </br>
+                    <input type="submit" value="Sign Up">
+                </fieldset>
             </form>
-            <button type="submit" form="signForm" value="Submit"> Sign Up </button>
+            
         </div>
 
 		<!-- shared page bottom HTML -->
