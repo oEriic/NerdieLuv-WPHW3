@@ -38,7 +38,7 @@
 		<h1>Thank you!</h1>
 		<p>
 			Welcome to NerdieLuv, 
-			<?php echo "$_POST["userName"]" ?>
+			<?php print $_POST["userName"] ?>
 		</p>
 		<p>Now <a href="matches.php">log in to see your matches!</a></p>
 
