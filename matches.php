@@ -18,11 +18,18 @@
         </div>
 </br>
 		<div>
-            <h1> Matches for 
-                FILLER Name
-            </h1>
-            
-        </div>
+			<form action="matches-submit.php" method="get">
+			<fieldset>
+                <legend>
+                    Returning user:
+                </legend>
+                    <label for="name">Name: </label>
+                        <input type="text" name="userName" id="name" maxlength="16"/>
+                    </br>
+                    <input type="submit" value="View Matches">
+                </fieldset>
+			</form>
+		</div>
 
 		<!-- shared page bottom HTML -->
 		<div>
