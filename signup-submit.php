@@ -18,27 +18,14 @@
         </div>
 
 		<?php
-			// Create file and store info into singles.txt
-			$singlesFile = "singles.txt";
-			$txt = $_POST["userName"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["gender"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["age"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["userPersonality"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["oslist"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["minAge"] . ",";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
-			$txt = $_POST["maxAge"] . "\n";
-			file_put_contents($singlesFile, $txt, FILE_APPEND | LOCK_EX);
+			// store Info to singles.txt
+			include 'common.php';
+			storeInfo();
 		?>
 		<h1>Thank you!</h1>
 		<p>
 			Welcome to NerdieLuv, 
-			<?php print $_POST["userName"] ?>
+			<?= $_POST["userName"] ?>
 		</p>
 		<p>Now <a href="matches.php">log in to see your matches!</a></p>
 

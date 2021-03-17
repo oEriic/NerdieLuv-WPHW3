@@ -52,3 +52,9 @@ Vint Cerf,M,67,ISFP,Mac OS X,28,55
 Yukihiro Matsumoto,M,45,ENTP,Mac OS X,10,25
 Zelda,F,59,ESTP,Windows,40,62,,,,windows,,
 adadad,male,22,EFTG,windows,22,24
+,,,,windows,,
+,female,,,windows,,
+Tom,male,22,EFTI,linux,25,99
+Tom,male,22,EFTI,linux,25,99
+,,,,windows,,
+,,,,windows,,

@@ -18,60 +18,16 @@
         </div>
 </br>
         <?php
-            // Create variables needed to store matches / info
-            $file = fopen("singles.txt", "r") or die("Unable to open file!"); // open file for read
-            $matches = array();
-            $info = array();
-            $index = 0;
-            
-            // while loop to store info from file
-            while(!feof($file)){
-                $line = fgets($file);
-                array_push($info, $line);
-                $info[$index] = explode (",", $line);
-                $index++;
-            }
-            fclose($file); //close file
+            include 'common.php';
+            storeMatchInfo();
+            checkMatch();
         ?>
 
         <h2> Matches for 
-            <?php $name = $_GET["userName"]; print $name?>
+            <?= $name = $_GET["userName"]?>
         </h2>
             
             <?php
-                // variables for matching
-                $userPos = 0; // position of user
-                $matches = array(); // array to store matches
-
-                for($i = 0; $i < count($info)-1; $i++){ // search array for user by comparing name to every list until found
-                    if(strcmp($info[$i][0], $name) == 0){
-                        $userPos = $i; // store user pos
-                    }
-                }
-                
-                //Sync info with user's properties
-                $gender = $info[$userPos][1];
-                $age = $info[$userPos][2];
-                $type = $info[$userPos][3];
-                $os = $info[$userPos][4];
-                $minAge = $info[$userPos][5];
-                $maxAge = $info[$userPos][6];
-
-                // Find matches
-                for($i = 0; $i < count($info) - 1; $i++){
-                    if($info[$i][1] != $gender){ // used not equal to find opposite gender match
-                        if($info[$i][2] >= $minAge && $info[$i][2] <= $maxAge && $info[$i][6] >= $age && $info[$i][5] <= $age){ // check age range for both user and matched
-                            if($info[$i][4] == $os){ // check same os
-                                for($j = 0; $j < strlen($info[$i][3]); $j++){ //Check personality type 
-                                    if(strpos($type, $info[$i][3][$j])){
-                                        array_push($matches, $info[$i]);
-                                        break; // break after match to continue
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
                 // display matches
                 for($i = 0; $i < count($matches); $i++){
             ?>
@@ -79,31 +35,21 @@
                 <p>
                     <img src="imgResources/userIcon.png" alt="Match Photo" width="150px">
                     <b>
-                    <?php 
-                        print $matches[$i][0];
-                    ?>
+                    <?= $matches[$i][0]?>
                     </b>
                 </p>
                 <ul>
                     <li><b>Gender:</b> 
-                        <?php 
-                            print $matches[$i][1];
-                        ?>
+                        <?= $matches[$i][1]?>
                     </li>
                     <li><b>Age:</b> 
-                        <?php 
-                            print $matches[$i][1];
-                        ?>
+                        <?= $matches[$i][2]?>
                     </li>
                     <li><b>Type:</b> 
-                        <?php 
-                            print $matches[$i][1];
-                        ?>
+                        <?= $matches[$i][3]?>
                     </li>
                     <li><b>OS:</b> 
-                        <?php 
-                            print $matches[$i][1];
-                        ?>
+                        <?= $matches[$i][4]?>
                     </li>
                 </ul>
             </div>
