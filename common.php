@@ -75,7 +75,7 @@
                 // Find matches
                 // Find matches
                 for($i = 0; $i < count($info) - 1; $i++){
-                    if($info[$i][1] != $gender && $info[$i][4] == $os && $info[$i][2] >= $minAge && $info[$i][2] <= $maxAge && $info[$i][6] >= $age && $info[$i][5] <= $age){ 
+                    if($info[$i][1] != $gender and $info[$i][2] >= $minAge and $info[$i][2] <= $maxAge and $info[$i][4] == $os and  $info[$i][6] >= $age and $info[$i][5] <= $age){ 
                         // used not equal to find opposite gender match
                         // Check for os match
                         // check age range for both user and matched
@@ -88,6 +88,7 @@
                         }
                     }
                 }
+                return $matches;
             }
 		?>
 	</body>

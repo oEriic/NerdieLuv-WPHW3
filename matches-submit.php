@@ -20,7 +20,6 @@
         <?php
             include 'common.php';
             storeMatchInfo();
-            checkMatch();
         ?>
 
         <h2> Matches for 
@@ -28,28 +27,31 @@
         </h2>
             
             <?php
+                include_once 'common.php';
+                $match=array();
+                $match=checkMatch();
                 // display matches
-                for($i = 0; $i < count($matches); $i++){
+                for($i = 0; $i < count($match); $i++){
             ?>
             <div class="match">
                 <p>
                     <img src="imgResources/userIcon.png" alt="Match Photo" width="150px">
                     <b>
-                    <?= $matches[$i][0]?>
+                    <?= $match[$i][0]?>
                     </b>
                 </p>
                 <ul>
                     <li><b>Gender:</b> 
-                        <?= $matches[$i][1]?>
+                        <?= $match[$i][1]?>
                     </li>
                     <li><b>Age:</b> 
-                        <?= $matches[$i][2]?>
+                        <?= $match[$i][2]?>
                     </li>
                     <li><b>Type:</b> 
-                        <?= $matches[$i][3]?>
+                        <?= $match[$i][3]?>
                     </li>
                     <li><b>OS:</b> 
-                        <?= $matches[$i][4]?>
+                        <?= $match[$i][4]?>
                     </li>
                 </ul>
             </div>
