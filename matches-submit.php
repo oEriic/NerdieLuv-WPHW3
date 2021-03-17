@@ -17,17 +17,13 @@
             </a>
         </div>
 </br>
-        <?php
-            include 'common.php';
-            storeMatchInfo();
-        ?>
-
         <h2> Matches for 
             <?= $name = $_GET["userName"]?>
         </h2>
             
             <?php
                 include_once 'common.php';
+                storeMatchInfo();
                 $match=array();
                 $match=checkMatch();
                 // display matches
